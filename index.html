@@ -414,6 +414,7 @@
     .partner { grid-template-columns: 48px 1fr; gap: 16px; }
     .partner .status { grid-column: 2; justify-self: start; }
     .loc-grid { grid-template-columns: 1fr; gap: 32px; }
+    .loc-map { aspect-ratio: auto; min-height: 0; height: 360px; max-width: 100%; }
     .foot-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
   }
   @media (max-width: 640px) {
@@ -425,6 +426,8 @@
     .nav-inner .right { font-size: 11px; }
     .foot-grid { grid-template-columns: 1fr; }
     .foot-meta { flex-direction: column; gap: 8px; align-items: flex-start; }
+    .loc-info h3 { font-size: 26px; }
+    .loc-map { height: 320px; }
   }
 /* RSVP cta */
   .cta {
