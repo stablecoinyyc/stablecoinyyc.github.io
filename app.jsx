@@ -1,4 +1,4 @@
-// app.jsx — Stablecoins & Agentic AI · Industry Brief (Calgary, 2026)
+// app.jsx · Stablecoin & Agentic AI Forum · Industry Brief, Calgary 2026
 const { useEffect } = React;
 
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
@@ -13,7 +13,7 @@ function Nav() {
       <div className="nav-inner">
         <div className="nav-mark">
           <span className="dot" />
-          Stablecoins <em>&amp; agentic AI</em> · Calgary
+          Stablecoin <em>&amp; agentic AI</em> Forum · Calgary
         </div>
         <div className="nav-meta">July 28, 2026 · By invitation</div>
       </div>
@@ -37,7 +37,7 @@ function Hero() {
 
         <p className="hero-sub">
           A closed-door working session to shape a Canadian{" "}
-          <em>training consortium</em> &mdash; pairing university researchers
+          <em>training consortium</em> that pairs university researchers
           with the banks, fintechs, and AI companies who will define the next
           decade of how money and software actually move.
         </p>
@@ -49,7 +49,7 @@ function Hero() {
           </div>
           <div>
             <dt>Hours</dt>
-            <dd><b>09:00 — 17:00</b><span className="sub">Mountain Time</span></dd>
+            <dd><b>09:00 to 17:00</b><span className="sub">Mountain Time</span></dd>
           </div>
           <div>
             <dt>Venue</dt>
@@ -71,12 +71,12 @@ function About() {
     <section className="band" data-screen-label="about">
       <div className="wrap">
         <div className="about-grid">
-          <div className="section-num">§ 01 — Brief</div>
+          <div className="section-num">§ 01 · Brief</div>
           <p className="about-body">
             Two technologies are rewriting the rails of finance and software at
-            the same time. The graduates who can do <em>both</em> &mdash;
+            the same time. The graduates who can do <em>both</em>, meaning
             cryptography and machine learning, market microstructure and
-            autonomous systems &mdash; will define the next decade. We&rsquo;re
+            autonomous systems, will define the next decade. We&rsquo;re
             assembling the partners who will train them.
           </p>
         </div>
@@ -89,8 +89,8 @@ function About() {
 function Themes() {
   const themes = [
     { n: "01", t: "Settlement", h: <>Stablecoin <em>market microstructure</em> &amp; on-chain settlement.</>, p: "PSP flows, liquidity fragmentation, and cross-rail arbitrage in a 24/7 dollar-token world." },
-    { n: "02", t: "Trust",      h: <>Cryptography for <em>auditability</em> and programmable compliance.</>, p: "ZK proofs, MPC, attested computation — engineered for regulators, not whitepapers." },
-    { n: "03", t: "Autonomy",   h: <>Agentic AI <em>under constraint</em> — tool-use, planning, safe deployment.</>, p: "Agents that book, transact, escalate and revert — with provenance and guardrails." },
+    { n: "02", t: "Trust",      h: <>Cryptography for <em>auditability</em> and programmable compliance.</>, p: "ZK proofs, MPC, attested computation, engineered for regulators, not whitepapers." },
+    { n: "03", t: "Autonomy",   h: <>Agentic AI <em>under constraint</em>, meaning tool-use, planning, and safe deployment.</>, p: "Agents that book, transact, escalate and revert, with provenance and guardrails." },
     { n: "04", t: "Markets",    h: <>Agents trading agents: multi-agent <em>economies</em>.</>, p: "Simulation labs, market-making testbeds, and policy work for when most counterparties are models." },
     { n: "05", t: "Risk",       h: <>AML, fraud &amp; agentic <em>threat</em> modelling.</>, p: "Adversarial agents are coming faster than red teams. We train the defenders." },
     { n: "06", t: "Policy",     h: <>Regulation, <em>governance</em> &amp; the public-interest stack.</>, p: "Policy-fluent technologists embedded with regulators and standards bodies." },
@@ -99,7 +99,7 @@ function Themes() {
     <section className="band" data-screen-label="themes">
       <div className="wrap">
         <div className="section-head">
-          <div className="section-num">§ 02 — Themes</div>
+          <div className="section-num">§ 02 · Themes</div>
           <h2 className="section-title">Six research lanes we&rsquo;ll <em>train against</em>.</h2>
         </div>
         <div className="themes">
@@ -124,16 +124,16 @@ function Partners() {
   const rows = [
     { name: "University of Calgary", role: "Academic lead", confirmed: true },
     { name: "IEEE", role: "Co-convener", confirmed: true },
-    { name: "Open seat — Canadian bank / PSP", role: "Industry partner", confirmed: false },
-    { name: "Open seat — AI infrastructure", role: "Industry partner", confirmed: false },
-    { name: "Open seat — cryptography lab", role: "Research partner", confirmed: false },
-    { name: "Open seat — regulator / observer", role: "Public partner", confirmed: false },
+    { name: "Open seat · Canadian bank / PSP", role: "Industry partner", confirmed: false },
+    { name: "Open seat · AI infrastructure", role: "Industry partner", confirmed: false },
+    { name: "Open seat · cryptography lab", role: "Research partner", confirmed: false },
+    { name: "Open seat · regulator / observer", role: "Public partner", confirmed: false },
   ];
   return (
     <section className="band" data-screen-label="partners">
       <div className="wrap">
         <div className="section-head">
-          <div className="section-num">§ 03 — Consortium</div>
+          <div className="section-num">§ 03 · Consortium</div>
           <h2 className="section-title">The room, <em>as of today</em>.</h2>
         </div>
 
@@ -142,7 +142,7 @@ function Partners() {
           <div className="partners-body">
             <p className="partners-lead">
               A training program is the sum of the people committed to it.
-              Here are the seats we walk in with on July 28 &mdash; and the
+              Here are the seats we walk in with on July 28, and the
               ones we&rsquo;re looking to close in the room.
             </p>
 
@@ -167,7 +167,7 @@ function Location() {
     <section className="band" data-screen-label="location">
       <div className="wrap">
         <div className="section-head">
-          <div className="section-num">§ 04 — Place</div>
+          <div className="section-num">§ 04 · Place</div>
           <h2 className="section-title">Calgary. <em>University District</em>.</h2>
         </div>
 
@@ -183,7 +183,7 @@ function Location() {
               <div><dt>From YYC</dt><dd>~15 min by car</dd></div>
               <div><dt>From U of C</dt><dd>10 min on foot</dd></div>
               <div><dt>Nearest LRT</dt><dd>Brentwood · 6 min</dd></div>
-              <div><dt>Room hold</dt><dd>09:00 — 18:00 MDT</dd></div>
+              <div><dt>Room hold</dt><dd>09:00 to 18:00 MDT</dd></div>
             </dl>
           </div>
           <div className="loc-map" aria-label="Map: Alt Hotel Calgary, University District">
@@ -209,7 +209,7 @@ function Foot() {
     <footer className="foot" data-screen-label="footer">
       <div className="foot-grid">
         <div>
-          <div className="foot-mark">Stablecoins <em>&amp;</em><br/>Agentic AI &mdash; Calgary.</div>
+          <div className="foot-mark">Stablecoin <em>&amp;</em><br/>Agentic AI Forum · Calgary.</div>
           <p>
             An information page for an invitational working brief.
             <span>July 28, 2026 · Calgary, Alberta.</span>
