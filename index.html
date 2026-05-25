@@ -101,21 +101,9 @@
   }
 
   /* ─────────── meta strip (Swiss hairline grid) ─────────── */
-  .meta {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    border-bottom: var(--rule);
-  }
-  .meta > div { padding: 28px var(--gutter); border-right: var(--rule); }
-  .meta > div:last-child { border-right: 0; }
-  .meta dt {
-    font-size: 10.5px; font-weight: 700;
-    letter-spacing: 0.16em; text-transform: uppercase;
-    color: var(--mute);
-    margin-bottom: 14px;
-  }
-  .meta dd { margin: 0; font-size: 20px; font-weight: 600; letter-spacing: -0.018em; line-height: 1.2; }
-  .meta dd .sub { display: block; font-weight: 400; font-size: 13.5px; color: var(--mute); margin-top: 4px; letter-spacing: 0; }
+  .meta { margin: 32px auto 0; max-width: 56ch; }
+  .meta p { margin: 0 0 4px; font-size: 17px; font-weight: 600; letter-spacing: -0.018em; line-height: 1.4; color: var(--ink); }
+  .meta p:last-child { margin-bottom: 0; }
 
   /* ─────────── section primitive ─────────── */
   section.band { padding: 120px var(--gutter); border-bottom: var(--rule); position: relative; }
@@ -174,6 +162,8 @@
   }
   .spkr-avatar.yel { background: var(--yel); }
   .spkr-avatar.red { background: var(--red); color: var(--paper); }
+  .spkr-avatar:has(img) { border-radius: 50%; overflow: hidden; }
+  .spkr-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .spkr-avatar.ghost {
     background: transparent;
     border: 1.5px dashed rgba(244,241,232,.45);
@@ -268,6 +258,21 @@
   /* ─────────── WHY (paper band) ─────────── */
   .why-head { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: end; margin-bottom: 64px; }
   .why-head .lede { color: var(--ink); }
+
+  /* ─────────── SPONSORS (paper band) ─────────── */
+  .sponsors-head { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: end; margin-bottom: 64px; }
+  .sponsors-head .lede { color: var(--ink); }
+  .sponsors-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 64px;
+    align-items: center;
+    border-top: var(--rule);
+    border-bottom: var(--rule);
+    padding: 56px 0;
+  }
+  .sponsor { display: flex; justify-content: center; align-items: center; padding: 0 24px; }
+  .sponsor img { max-height: 110px; max-width: 100%; width: auto; height: auto; object-fit: contain; }
 
   /* ─────────── PARTNERS (red band) ─────────── */
   .partners {
@@ -395,12 +400,11 @@
   /* ─────────── responsive ─────────── */
   @media (max-width: 1000px) {
     :root { --gutter: 28px; }
-    .meta { grid-template-columns: 1fr; }
-    .meta > div { border-right: 0; border-bottom: var(--rule); }
-    .meta > div:last-child { border-bottom: 0; }
     .brief-grid { grid-template-columns: 1fr; gap: 40px; }
     .speakers-head { grid-template-columns: 1fr; gap: 24px; margin-bottom: 40px; }
     .why-head { grid-template-columns: 1fr; gap: 24px; margin-bottom: 40px; }
+    .sponsors-head { grid-template-columns: 1fr; gap: 24px; margin-bottom: 40px; }
+    .sponsors-grid { grid-template-columns: 1fr; gap: 40px; padding: 40px 0; }
     .speakers-grid { grid-template-columns: 1fr; }
     .spkr { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.4); }
     .spkr:last-child { border-bottom: 0; }
@@ -440,15 +444,6 @@
   }
   .cta:hover { background: var(--yel); color: var(--ink); }
   .cta .arrow { font-family: "Inter", sans-serif; font-weight: 700; }
-  .cta-meta {
-    display: inline-flex; align-items: baseline; gap: 14px;
-    margin-left: 18px;
-    font-size: 13px; font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--mute);
-    vertical-align: middle;
-  }
   .nav-cta {
     display: inline-flex; align-items: center; gap: 8px;
     padding: 8px 14px;
@@ -477,7 +472,7 @@
     <div class="mid"></div>
     <div class="right">
       <span class="hide-sm">July 28, 2026</span>
-      <a class="nav-cta" href="#rsvp">RSVP ↗</a>
+      <a class="nav-cta" href="https://www.eventbrite.com/e/training-talents-for-the-era-of-stablecoins-agentic-ai-tickets-1990352621269" target="_blank" rel="noopener">RSVP ↗</a>
     </div>
   </div>
 </nav>
@@ -489,17 +484,46 @@
   <p class="hero-sub">
     A one-day Calgary forum convening the practitioners, founders, and researchers charting what comes next at the edge of finance and AI.
   </p>
-  <a class="cta" id="rsvp" href="#" target="_blank" rel="noopener">
+  <div class="meta">
+    <p>Tuesday, July 28, 2026</p>
+    <p>Indigo Room</p>
+    <p>Alt Hotel, University District</p>
+    <p>Calgary, Alberta</p>
+  </div>
+  <a class="cta" id="rsvp" href="https://www.eventbrite.com/e/training-talents-for-the-era-of-stablecoins-agentic-ai-tickets-1990352621269" target="_blank" rel="noopener">
     RSVP for July 28 <span class="arrow">→</span>
   </a>
-  <div class="cta-meta"><span>Free · Registration required</span></div>
 </section>
 
-<dl class="meta">
-  <div><dt>Date</dt><dd>Tuesday, July 28<span class="sub">2026</span></dd></div>
-  <div><dt>Hours</dt><dd>09:00 to 17:00<span class="sub">Mountain Time</span></dd></div>
-  <div><dt>Venue</dt><dd>Indigo Room<span class="sub">Alt Hotel · University District</span></dd></div>
-</dl>
+<section class="band color blue">
+  <div class="wrap">
+    <div class="speakers-head">
+      <h2>Speakers.</h2>
+      <p class="lede">
+        Practitioners working at the edge of stablecoins, payments, and agentic AI, in the room to co-design the program. More to be announced.
+      </p>
+    </div>
+    <div class="speakers-grid">
+      <article class="spkr">
+        <div class="spkr-avatar"><img src="pics/brian-ford.jpg" alt="Brian Ford headshot" loading="lazy"></div>
+        <h3>Brian Ford</h3>
+        <p class="role">VP &amp; Head, Business Solutions &amp; Digital Assets</p>
+        <p class="org">ATB</p>
+      </article>
+      <article class="spkr">
+        <div class="spkr-avatar"><img src="pics/kevin-zhang.jpg" alt="Kevin Zhang headshot" loading="lazy"></div>
+        <h3>Kevin Zhang</h3>
+        <p class="role">Co-Founder</p>
+        <p class="org">Loon</p>
+      </article>
+      <article class="spkr placeholder">
+        <div class="spkr-avatar ghost">+</div>
+        <h3 class="ghost-h3">More to be announced</h3>
+        <p class="role">Programme being finalised</p>
+      </article>
+    </div>
+  </div>
+</section>
 
 <section class="band">
   <div class="why-head">
@@ -530,33 +554,16 @@
   </div>
 </section>
 
-<section class="band color blue">
-  <div class="wrap">
-    <div class="speakers-head">
-      <h2>Speakers.</h2>
-      <p class="lede">
-        Practitioners working at the edge of stablecoins, payments, and agentic AI, in the room to co-design the program. More to be announced.
-      </p>
-    </div>
-    <div class="speakers-grid">
-      <article class="spkr">
-        <div class="spkr-avatar yel">BF</div>
-        <h3>Brian Ford</h3>
-        <p class="role">VP &amp; Head, Business Solutions &amp; Digital Assets</p>
-        <p class="org">ATB</p>
-      </article>
-      <article class="spkr">
-        <div class="spkr-avatar red">KZ</div>
-        <h3>Kevin Zhang</h3>
-        <p class="role">Co-Founder</p>
-        <p class="org">Loon</p>
-      </article>
-      <article class="spkr placeholder">
-        <div class="spkr-avatar ghost">+</div>
-        <h3 class="ghost-h3">More to be announced</h3>
-        <p class="role">Programme being finalised</p>
-      </article>
-    </div>
+<section class="band">
+  <div class="sponsors-head">
+    <h2>Sponsors.</h2>
+    <p class="lede">
+      Convened by the University of Calgary's Schulich School of Engineering and IEEE's Systems, Man, and Cybernetics Society.
+    </p>
+  </div>
+  <div class="sponsors-grid">
+    <div class="sponsor"><img src="sponsors/Schilich.png" alt="Schulich School of Engineering, University of Calgary" loading="lazy"></div>
+    <div class="sponsor"><img src="sponsors/ieee-logo.webp" alt="IEEE Systems, Man, and Cybernetics Society" loading="lazy"></div>
   </div>
 </section>
 
