@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 <style>
   :root {
-    --paper:  #FAFAF7;
+    --paper:  #EDEDEB;
     --ink:    #0E0F11;
     --mute:   #6b6b6b;
     --line:   #0E0F11;
@@ -418,35 +418,7 @@
     .foot-grid { grid-template-columns: 1fr; }
     .foot-meta { flex-direction: column; gap: 8px; align-items: flex-start; }
   }
-  /* ─────── palette picker ─────── */
-  .pp {
-    position: fixed; bottom: 18px; right: 18px;
-    z-index: 100;
-    display: flex; align-items: center; gap: 8px;
-    padding: 8px 10px;
-    background: var(--ink);
-    border-radius: 999px;
-    box-shadow: 0 6px 24px rgba(0,0,0,.18), 0 0 0 1px rgba(255,255,255,.06);
-  }
-  .pp-label {
-    font-size: 10px; font-weight: 700;
-    letter-spacing: 0.16em; text-transform: uppercase;
-    color: rgba(244,241,232,.7);
-    padding: 0 8px 0 4px;
-  }
-  .pp-sw {
-    width: 22px; height: 22px; border-radius: 99px;
-    border: 1.5px solid rgba(244,241,232,.25);
-    cursor: pointer; padding: 0;
-    transition: transform .15s, border-color .15s;
-  }
-  .pp-sw:hover { transform: scale(1.1); border-color: rgba(244,241,232,.6); }
-  .pp-sw.is-active { border-color: var(--yel); transform: scale(1.1); }
-  @media (max-width: 640px) {
-    .pp-label { display: none; }
-    .pp { bottom: 12px; right: 12px; padding: 6px; }
-  }
-  /* RSVP cta */
+/* RSVP cta */
   .cta {
     display: inline-flex; align-items: center; gap: 12px;
     margin-top: 48px;
@@ -511,7 +483,7 @@
     Training <span class="red">talents</span> for the <span class="hl">era</span> of <span class="blue">stablecoins</span> &amp; agentic AI.
   </h1>
   <p class="hero-sub">
-    A one-day industry working session shaping a Canadian training pipeline for the next generation of finance &amp; AI &mdash; convened by the University of Calgary and IEEE.
+    A one-day industry forum for facilitating new research and talent training program in the era of Stablecoin and Agentic AI.
   </p>
   <a class="cta" id="rsvp" href="#" target="_blank" rel="noopener">
     RSVP for July 28 <span class="arrow">→</span>
@@ -522,7 +494,7 @@
 <dl class="meta">
   <div><dt>Date</dt><dd>Tuesday, July 28<span class="sub">2026</span></dd></div>
   <div><dt>Hours</dt><dd>09:00 — 17:00<span class="sub">Mountain Time</span></dd></div>
-  <div><dt>Venue</dt><dd>Indigo Meeting Room<span class="sub">Alt Hotel · University District</span></dd></div>
+  <div><dt>Venue</dt><dd>Indigo Room<span class="sub">Alt Hotel · University District</span></dd></div>
   <div><dt>Format</dt><dd>Industry working session<span class="sub">Free · RSVP required</span></dd></div>
 </dl>
 
@@ -603,46 +575,6 @@
     </div>
   </div>
 </footer>
-
-<!-- palette picker -->
-<div class="pp" role="radiogroup" aria-label="Page background">
-  <span class="pp-label">Paper</span>
-</div>
-<script>
-  (function () {
-    var PALETTES = [
-      { id: 'cool',   bg: '#FAFAF7', label: 'Cool white' },
-      { id: 'snow',   bg: '#FFFFFF', label: 'Pure white' },
-      { id: 'stone',  bg: '#EDEDEB', label: 'Stone gray' },
-      { id: 'mist',   bg: '#EEF1F4', label: 'Cool mist' },
-      { id: 'cream',  bg: '#F4F1E8', label: 'Warm cream' },
-      { id: 'sand',   bg: '#E8E2D2', label: 'Deep sand' }
-    ];
-    var STORAGE = 'sa-paper';
-    var pp = document.querySelector('.pp');
-    var saved = localStorage.getItem(STORAGE) || 'cool';
-    PALETTES.forEach(function (p) {
-      var b = document.createElement('button');
-      b.className = 'pp-sw';
-      b.type = 'button';
-      b.title = p.label;
-      b.setAttribute('aria-label', p.label);
-      b.dataset.id = p.id;
-      b.style.background = p.bg;
-      b.addEventListener('click', function () { apply(p.id); });
-      pp.appendChild(b);
-    });
-    function apply(id) {
-      var p = PALETTES.find(function (x) { return x.id === id; }) || PALETTES[0];
-      document.documentElement.style.setProperty('--paper', p.bg);
-      pp.querySelectorAll('.pp-sw').forEach(function (el) {
-        el.classList.toggle('is-active', el.dataset.id === p.id);
-      });
-      try { localStorage.setItem(STORAGE, p.id); } catch (e) {}
-    }
-    apply(saved);
-  })();
-</script>
 
 </body>
 </html>
