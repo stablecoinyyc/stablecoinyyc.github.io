@@ -4,6 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Training Talents · Stablecoin &amp; Agentic AI Forum · Calgary · July 28, 2026</title>
+<link rel="icon" type="image/png" href="pics/stable-logo.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -51,7 +52,7 @@
     letter-spacing: 0.04em;
   }
   .nav-inner .left  { display: flex; align-items: center; gap: 10px; }
-  .nav-inner .dot   { width: 9px; height: 9px; border-radius: 99px; background: var(--red); }
+  .nav-inner .nav-logo { height: 44px; width: auto; display: block; }
   .nav-inner .mid   { font-weight: 700; letter-spacing: -0.005em; }
   .nav-inner .right { text-align: right; color: var(--mute); }
 
@@ -217,7 +218,7 @@
   .themes-table {}
   .theme-row {
     display: grid;
-    grid-template-columns: 80px 1.2fr 2fr 100px;
+    grid-template-columns: 80px 1.2fr 2fr;
     gap: 32px;
     padding: 32px 0;
     align-items: baseline;
@@ -245,15 +246,6 @@
     color: var(--mute);
     max-width: 52ch;
   }
-  .theme-row .tag {
-    font-size: 10.5px;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--mute);
-    text-align: right;
-  }
-
   /* ─────────── WHY (paper band) ─────────── */
   .why-head { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: end; margin-bottom: 64px; }
   .why-head .lede { color: var(--ink); }
@@ -399,20 +391,7 @@
   }
   .foot-mark .yelw { color: var(--yel); }
   .foot-mark .redw { color: var(--red); }
-  .foot-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 48px;
-    padding: 48px 0;
-    border-top: 1.5px solid var(--yel);
-    border-bottom: 1.5px solid rgba(244,241,232,.2);
-  }
-  .foot-grid h4 { font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--yel); margin: 0 0 14px; }
-  .foot-grid p { margin: 0 0 12px; font-size: 15px; line-height: 1.5; }
-  .foot-grid p b { font-weight: 600; }
-  .foot-grid p span { color: rgba(244,241,232,.6); display: block; margin-top: 4px; font-size: 13px; }
-  .foot-grid a { border-bottom: 1px solid rgba(244,241,232,.3); }
-  .foot-grid a:hover { color: var(--yel); border-bottom-color: var(--yel); }
+  .foot-logo { display: block; height: 72px; width: auto; margin: 0 0 24px; filter: brightness(0) invert(1); }
   .foot-meta { padding-top: 24px; display: flex; justify-content: space-between; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(244,241,232,.55); }
 
   /* ─────────── responsive ─────────── */
@@ -430,12 +409,10 @@
     .spkr:last-child { border-bottom: 0; }
     .theme-row { grid-template-columns: 56px 1fr; gap: 16px; }
     .theme-row .p { grid-column: 2; }
-    .theme-row .tag { grid-column: 2; text-align: left; }
     .partner { grid-template-columns: 48px 1fr; gap: 16px; }
     .partner .status { grid-column: 2; justify-self: start; }
     .loc-grid { grid-template-columns: 1fr; gap: 32px; }
     .loc-map { aspect-ratio: auto; min-height: 0; height: 360px; max-width: 100%; }
-    .foot-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
   }
   @media (max-width: 640px) {
     :root { --gutter: 20px; }
@@ -444,7 +421,6 @@
     .nav-inner { grid-template-columns: 1fr 1fr; }
     .nav-inner .mid { display: none; }
     .nav-inner .right { font-size: 11px; }
-    .foot-grid { grid-template-columns: 1fr; }
     .foot-meta { flex-direction: column; gap: 8px; align-items: flex-start; }
     .loc-info h3 { font-size: 26px; }
     .loc-map { height: 320px; }
@@ -489,7 +465,7 @@
 <nav class="nav">
   <div class="nav-inner">
     <div class="left">
-      <span class="dot"></span>
+      <img class="nav-logo" src="pics/stable-logo.png" alt="Stablecoin & Agentic AI Forum logo">
       Stablecoin &amp; Agentic AI Forum
     </div>
     <div class="mid"></div>
@@ -531,7 +507,7 @@
         <div class="spkr-avatar"><img src="pics/brian-ford.jpg" alt="Brian Ford headshot" loading="lazy"></div>
         <h3>Brian Ford</h3>
         <p class="role">VP &amp; Head, Business Solutions &amp; Digital Assets</p>
-        <p class="org">ATB</p>
+        <p class="org">ATB Financial</p>
       </article>
       <article class="spkr">
         <div class="spkr-avatar"><img src="pics/kevin-zhang.jpg" alt="Kevin Zhang headshot" loading="lazy"></div>
@@ -560,19 +536,16 @@
       <div class="n">01</div>
       <div class="t">Direct access to stablecoin thought leaders</div>
       <div class="p">A full day in working conversation with the practitioners, researchers, and policy voices shaping how stablecoins move money in Canada and globally, so attendees leave with relationships, not slides.</div>
-      <div class="tag">Takeaway</div>
     </div>
     <div class="theme-row">
       <div class="n">02</div>
       <div class="t">Entrepreneurship pathways unique to Alberta</div>
       <div class="p">Alberta currently offers Canada's most accommodating regulatory and banking environment for fintech and blockchain ventures, so founders and prospective founders can explore concrete support, capital, and partnership pathways from idea to launch.</div>
-      <div class="tag">Takeaway</div>
     </div>
     <div class="theme-row">
       <div class="n">03</div>
       <div class="t">A pipeline into industry roles</div>
       <div class="p">The room includes banks, payment processors, AI labs, and infrastructure firms hiring at the stablecoin and agentic AI intersection, so students and early-career engineers connect directly with internship and employment opportunities.</div>
-      <div class="tag">Takeaway</div>
     </div>
   </div>
 </section>
@@ -634,16 +607,10 @@
 <footer>
   <div class="foot-wrap">
     <div class="foot-mark">
+      <img class="foot-logo" src="pics/stable-logo.png" alt="Stablecoin & Agentic AI Forum logo">
       Stablecoin<br>
       &amp; <span class="yelw">Agentic AI</span> Forum.<br>
       <span class="redw">Calgary 2026.</span>
-    </div>
-    <div class="foot-grid">
-      <div>
-        <h4>Convened by</h4>
-        <p><b>University of Calgary</b><span>Schulich School of Engineering<br>Faculty of Science</span></p>
-        <p style="margin-top:14px"><b>IEEE</b><span>Systems, Man, and Cybernetics Society</span></p>
-      </div>
     </div>
     <div class="foot-meta">
       <span>© 2026 · Calgary</span>
