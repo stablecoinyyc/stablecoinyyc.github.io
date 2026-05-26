@@ -214,13 +214,12 @@
   .brief-fact dd .u { font-family: "Inter", sans-serif; font-weight: 400; font-size: 14px; letter-spacing: 0; margin-left: 6px; opacity: 0.85; }
 
   /* ─────────── THEMES (Swiss table on paper) ─────────── */
-  .themes-table { border-top: var(--rule); }
+  .themes-table {}
   .theme-row {
     display: grid;
     grid-template-columns: 80px 1.2fr 2fr 100px;
     gap: 32px;
     padding: 32px 0;
-    border-bottom: var(--rule);
     align-items: baseline;
   }
   .theme-row .n {
@@ -259,6 +258,27 @@
   .why-head { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: end; margin-bottom: 64px; }
   .why-head .lede { color: var(--ink); }
 
+  /* ─────────── ORGANIZERS (paper band) ─────────── */
+  .organizers-head { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: end; margin-bottom: 64px; }
+  .organizers-head .lede { color: var(--ink); }
+  .organizers-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 56px;
+  }
+  .organizer h3 {
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 900;
+    font-size: clamp(26px, 2.6vw, 36px);
+    line-height: 1.0;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    margin: 0 0 12px;
+    color: var(--ink);
+  }
+  .organizer .role { margin: 0; font-size: 16px; line-height: 1.4; color: var(--ink); font-weight: 500; }
+  .organizer .org { margin: 12px 0 0; font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mute); }
+
   /* ─────────── SPONSORS (paper band) ─────────── */
   .sponsors-head { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: end; margin-bottom: 64px; }
   .sponsors-head .lede { color: var(--ink); }
@@ -267,8 +287,6 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 64px;
     align-items: center;
-    border-top: var(--rule);
-    border-bottom: var(--rule);
     padding: 56px 0;
   }
   .sponsor { display: flex; justify-content: center; align-items: center; padding: 0 24px; }
@@ -405,6 +423,8 @@
     .why-head { grid-template-columns: 1fr; gap: 24px; margin-bottom: 40px; }
     .sponsors-head { grid-template-columns: 1fr; gap: 24px; margin-bottom: 40px; }
     .sponsors-grid { grid-template-columns: 1fr; gap: 40px; padding: 40px 0; }
+    .organizers-head { grid-template-columns: 1fr; gap: 24px; margin-bottom: 40px; }
+    .organizers-grid { grid-template-columns: 1fr; gap: 40px; }
     .speakers-grid { grid-template-columns: 1fr; }
     .spkr { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.4); }
     .spkr:last-child { border-bottom: 0; }
@@ -558,10 +578,28 @@
 </section>
 
 <section class="band">
+  <div class="organizers-head">
+    <h2>Organizers.</h2>
+  </div>
+  <div class="organizers-grid">
+    <article class="organizer">
+      <h3>Steve Drew</h3>
+      <p class="role">Associate Professor, Schulich School of Engineering</p>
+      <p class="org">University of Calgary</p>
+    </article>
+    <article class="organizer">
+      <h3>Henry Leung</h3>
+      <p class="role">Professor, Schulich School of Engineering</p>
+      <p class="org">University of Calgary</p>
+    </article>
+  </div>
+</section>
+
+<section class="band">
   <div class="sponsors-head">
     <h2>Sponsors.</h2>
     <p class="lede">
-      Convened by the University of Calgary's Schulich School of Engineering and IEEE's Systems, Man, and Cybernetics Society.
+      We would like to thank the University of Calgary's Schulich School of Engineering and IEEE's Systems, Man, and Cybernetics Society for sponsoring this event.
     </p>
   </div>
   <div class="sponsors-grid">
