@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Training Talents · Stablecoin &amp; Agentic AI Forum · Calgary · July 28, 2026</title>
+<title>Training Talents · IEEE Stablecoin &amp; Agentic AI Forum · Calgary · July 28, 2026</title>
 <link rel="icon" type="image/png" href="pics/stable-logo.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -43,7 +43,7 @@
   .nav { border-bottom: var(--rule); background: var(--paper); position: sticky; top: 0; z-index: 50; }
   .nav-inner {
     display: grid;
-    grid-template-columns: 1fr auto 1fr;
+    grid-template-columns: minmax(0, max-content) 1fr auto;
     padding: 16px var(--gutter);
     gap: 24px;
     align-items: center;
@@ -51,8 +51,8 @@
     font-weight: 600;
     letter-spacing: 0.04em;
   }
-  .nav-inner .left  { display: flex; align-items: center; gap: 10px; }
-  .nav-inner .nav-logo { height: 44px; width: auto; display: block; }
+  .nav-inner .left  { display: flex; align-items: center; gap: 16px; font-size: 30px; font-weight: 700; letter-spacing: -0.02em; }
+  .nav-inner .nav-logo { height: 72px; width: auto; display: block; }
   .nav-inner .mid   { font-weight: 700; letter-spacing: -0.005em; }
   .nav-inner .right { text-align: right; color: var(--mute); }
 
@@ -276,7 +276,7 @@
   .sponsors-head .lede { color: var(--ink); }
   .sponsors-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 64px;
     align-items: center;
     padding: 56px 0;
@@ -419,9 +419,12 @@
     :root { --gutter: 20px; }
     section.band { padding: 80px var(--gutter); }
     .hero { padding: 64px var(--gutter) 56px; }
-    .nav-inner { grid-template-columns: 1fr 1fr; }
+    .nav-inner { grid-template-columns: minmax(0, 1fr) auto; gap: 16px; }
     .nav-inner .mid { display: none; }
     .nav-inner .right { font-size: 11px; }
+    .nav-inner .left { font-size: 16px; }
+    .nav-inner .nav-logo { height: 48px; }
+    .hide-sm { display: none; }
     .foot-meta { flex-direction: column; gap: 8px; align-items: flex-start; }
     .loc-info h3 { font-size: 26px; }
     .loc-map { height: 320px; }
@@ -466,8 +469,8 @@
 <nav class="nav">
   <div class="nav-inner">
     <div class="left">
-      <img class="nav-logo" src="pics/stable-logo.png" alt="Stablecoin & Agentic AI Forum logo">
-      Stablecoin &amp; Agentic AI Forum
+      <img class="nav-logo" src="pics/ieee-smc-logo.webp" alt="IEEE Systems, Man, and Cybernetics Society logo">
+      IEEE Stablecoin &amp; Agentic AI Forum
     </div>
     <div class="mid"></div>
     <div class="right">
@@ -589,7 +592,8 @@
     </p>
   </div>
   <div class="sponsors-grid">
-    <div class="sponsor"><img src="sponsors/ieee-logo.webp" alt="IEEE Systems, Man, and Cybernetics Society" loading="lazy"></div>
+    <div class="sponsor"><img src="pics/ieee-smc-logo.webp" alt="IEEE Systems, Man, and Cybernetics Society" loading="lazy"></div>
+    <div class="sponsor"><img src="sponsors/ieee-logo.webp" alt="IEEE" loading="lazy"></div>
     <div class="sponsor sponsor-schulich"><img src="sponsors/Schilich.png" alt="Schulich School of Engineering, University of Calgary" loading="lazy"></div>
   </div>
 </section>
@@ -620,8 +624,8 @@
 <footer>
   <div class="foot-wrap">
     <div class="foot-mark">
-      <img class="foot-logo" src="pics/stable-logo.png" alt="Stablecoin & Agentic AI Forum logo">
-      Stablecoin<br>
+      <img class="foot-logo" src="pics/stable-logo.png" alt="IEEE Stablecoin & Agentic AI Forum logo">
+      IEEE Stablecoin<br>
       &amp; <span class="yelw">Agentic AI</span> Forum.<br>
       <span class="redw">Calgary 2026.</span>
     </div>
