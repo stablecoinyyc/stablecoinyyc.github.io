@@ -197,6 +197,7 @@
     color: var(--yel);
   }
   .spkr.placeholder .role { color: rgba(244,241,232,.55); font-weight: 400; }
+  .spkr .bio { margin: 14px 0 0; font-size: 14px; line-height: 1.5; color: rgba(244,241,232,.75); }
 
   /* ─────────── (deprecated, kept for safety) ─────────── */
   .brief-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: end; }
@@ -218,22 +219,11 @@
   .themes-table {}
   .theme-row {
     display: grid;
-    grid-template-columns: 80px 1.2fr 2fr;
+    grid-template-columns: 1.2fr 2fr;
     gap: 32px;
     padding: 32px 0;
     align-items: baseline;
   }
-  .theme-row .n {
-    font-family: "Archivo Black", sans-serif;
-    font-size: 22px;
-    letter-spacing: -0.02em;
-  }
-  .theme-row:nth-child(1) .n { color: var(--red); }
-  .theme-row:nth-child(2) .n { color: var(--blue); }
-  .theme-row:nth-child(3) .n { color: var(--ink); }
-  .theme-row:nth-child(4) .n { color: var(--blue); }
-  .theme-row:nth-child(5) .n { color: var(--red); }
-  .theme-row:nth-child(6) .n { color: var(--ink); }
   .theme-row .t {
     font-size: clamp(22px, 2.2vw, 32px);
     font-weight: 700;
@@ -411,8 +401,7 @@
     .speakers-grid { grid-template-columns: 1fr; }
     .spkr { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.4); }
     .spkr:last-child { border-bottom: 0; }
-    .theme-row { grid-template-columns: 56px 1fr; gap: 16px; }
-    .theme-row .p { grid-column: 2; }
+    .theme-row { grid-template-columns: 1fr; gap: 16px; }
     .partner { grid-template-columns: 48px 1fr; gap: 16px; }
     .partner .status { grid-column: 2; justify-self: start; }
     .loc-grid { grid-template-columns: 1fr; gap: 32px; }
@@ -515,30 +504,35 @@
         <h3>Brian Ford</h3>
         <p class="role">VP &amp; Head, Business Solutions &amp; Digital Assets</p>
         <p class="org">ATB Financial</p>
+        <p class="bio">Brian leads ATB Business Solutions, overseeing payments, liquidity, trade finance, cards, and cryptocurrency. He previously held senior cash-management and payments roles at HSBC across Canada and Korea.</p>
       </article>
       <article class="spkr">
         <div class="spkr-avatar"><img src="pics/kevin-zhang.jpg" alt="Kevin Zhang headshot" loading="lazy"></div>
         <h3>Kevin Zhang</h3>
         <p class="role">Co-Founder</p>
         <p class="org">Loon</p>
+        <p class="bio">Kevin is building Loon, a regulated Canadian-dollar stablecoin. Previously the technical architect behind Paytrie and a senior blockchain architect at ConsenSys, he holds a systems design engineering degree from the University of Waterloo.</p>
       </article>
       <article class="spkr">
         <div class="spkr-avatar"><img src="pics/youssef-harkati.jpg" alt="Youssef Harkati headshot" loading="lazy"></div>
         <h3>Youssef Harkati</h3>
         <p class="role">Co-Founder &amp; CEO</p>
         <p class="org">BrightOnLABS</p>
+        <p class="bio">Youssef co-founded BrightOnLABS, building AI-driven SaaS for anomaly detection and cloud security. A DevSecOps and cybersecurity specialist, he holds a Master's in Cybersecurity Engineering with a focus on AI.</p>
       </article>
       <article class="spkr">
         <div class="spkr-avatar"><img src="pics/jade-alberts.png" alt="Jade Alberts headshot" loading="lazy"></div>
         <h3>Jade Alberts</h3>
         <p class="role">Marketing Director</p>
         <p class="org">Blockchain Insurance Inc.</p>
+        <p class="bio">A Calgary entrepreneur with more than 25 years of experience and an active angel investor across 30+ startups, Jade advises founders through Innovate Calgary and hosts the weekly show "Telling It Like It Is."</p>
       </article>
       <article class="spkr">
         <div class="spkr-avatar"><img src="pics/george-bordianu.jpg" alt="George Bordianu headshot" loading="lazy"></div>
         <h3>George Bordianu</h3>
         <p class="role">Co-Founder &amp; CEO</p>
         <p class="org">Balance</p>
+        <p class="bio">George co-founded Balance, one of Canada's largest qualified digital-asset custodians. A second-time founder with an MSc in Computer Science from McGill, he was previously Director of Engineering at 500px.</p>
       </article>
       <article class="spkr placeholder">
         <div class="spkr-avatar ghost">+</div>
@@ -558,17 +552,14 @@
   </div>
   <div class="themes-table" aria-label="What attendees take home">
     <div class="theme-row">
-      <div class="n">01</div>
       <div class="t">Direct access to stablecoin thought leaders</div>
       <div class="p">A full day in working conversation with the practitioners, researchers, and policy voices shaping how stablecoins move money in Canada and globally, so attendees leave with relationships, not slides.</div>
     </div>
     <div class="theme-row">
-      <div class="n">02</div>
       <div class="t">Entrepreneurship pathways unique to Alberta</div>
       <div class="p">Alberta currently offers Canada's most accommodating regulatory and banking environment for fintech and blockchain ventures, so founders and prospective founders can explore concrete support, capital, and partnership pathways from idea to launch.</div>
     </div>
     <div class="theme-row">
-      <div class="n">03</div>
       <div class="t">A pipeline into industry roles</div>
       <div class="p">The room includes banks, payment processors, AI labs, and infrastructure firms hiring at the stablecoin and agentic AI intersection, so students and early-career engineers connect directly with internship and employment opportunities.</div>
     </div>
@@ -585,7 +576,7 @@
       <h3>Henry Leung</h3>
       <p class="role">Professor, Schulich School of Engineering</p>
       <p class="org">University of Calgary</p>
-      <p class="bio">Dr. Leung's research spans AI, data analytics, the Internet of Things, machine learning, robotics, and signal and image processing. His is Fellow of IEEE, SPIE, the Canadian Academy of Engineering, and the Royal Society of Canada. He is a recipient of the 2024 Killam Research Excellence Award.</p>
+      <p class="bio">Dr. Leung's research spans AI, data analytics, the Internet of Things, machine learning, robotics, and signal and image processing. He is a Fellow of IEEE, SPIE, the Canadian Academy of Engineering, and the Royal Society of Canada. He is a recipient of the 2024 Killam Research Excellence Award.</p>
     </article>
     <article class="organizer">
       <div class="organizer-avatar"><img src="pics/steve-drew.jpeg" alt="Steve Drew headshot" loading="lazy"></div>
