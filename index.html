@@ -241,18 +241,8 @@
   .program-head .lede { color: var(--ink); }
   .program-table { border-top: 1px solid rgba(14,15,17,.14); }
   .program-row {
-    display: grid;
-    grid-template-columns: 80px 1fr;
-    gap: 32px;
     padding: 32px 0;
-    align-items: baseline;
     border-bottom: 1px solid rgba(14,15,17,.14);
-  }
-  .program-row .slot {
-    font-family: "Archivo Black", sans-serif;
-    font-size: 22px;
-    letter-spacing: -0.02em;
-    color: var(--blue);
   }
   .program-row .talk-title {
     margin: 0;
@@ -433,7 +423,6 @@
     .spkr:last-child { border-bottom: 0; }
     .theme-row { grid-template-columns: 1fr; gap: 16px; }
     .program-head { grid-template-columns: 1fr; gap: 24px; margin-bottom: 40px; }
-    .program-row { grid-template-columns: 1fr; gap: 8px; }
     .partner { grid-template-columns: 48px 1fr; gap: 16px; }
     .partner .status { grid-column: 2; justify-self: start; }
     .loc-grid { grid-template-columns: 1fr; gap: 32px; }
@@ -566,6 +555,20 @@
         <p class="org">Balance</p>
         <p class="bio">George co-founded Balance, one of Canada's largest qualified digital-asset custodians. A second-time founder with an MSc in Computer Science from McGill, he was previously Director of Engineering at 500px.</p>
       </article>
+      <article class="spkr">
+        <div class="spkr-avatar"><img src="pics/koleya-karringten.jpg" alt="Koleya Karringten headshot" loading="lazy"></div>
+        <h3>Koleya Karringten</h3>
+        <p class="role">Executive Director</p>
+        <p class="org">Canadian Blockchain Consortium</p>
+        <p class="bio">Koleya leads the Canadian Blockchain Consortium, the country's largest blockchain ecosystem organization, uniting companies, corporate leaders, and government. A cleantech entrepreneur and CEO of Absolute Combustion, she co-founded the Canadian Blockchain Association for Women.</p>
+      </article>
+      <article class="spkr">
+        <div class="spkr-avatar"><img src="pics/julie-brunias.webp" alt="Julie Brunias headshot" loading="lazy"></div>
+        <h3>Julie Brunias</h3>
+        <p class="role">Cybersecurity Team Lead &amp; AI Champion</p>
+        <p class="org">Videotron</p>
+        <p class="bio">Julie is a cybersecurity professional with 14 years defending critical infrastructure across energy, banking, telecom, and manufacturing, with expertise in red teaming, adversarial testing, and securing generative AI. She focuses on the intersection of AI security and governance, and speaks frequently at conferences including InCyber, GoSec, and HackMiami.</p>
+      </article>
       <article class="spkr placeholder">
         <div class="spkr-avatar ghost">+</div>
         <h3 class="ghost-h3">More to be announced</h3>
@@ -577,14 +580,31 @@
 
 <section class="band">
   <div class="program-head">
-    <h2>Program.</h2>
+    <h2>Program At A Glance.</h2>
     <p class="lede">
-      A working agenda of talks and sessions across the day. More to be announced.
+      A preview of the talks and panels planned for the day. The detailed program will be available closer to the event.
     </p>
   </div>
   <div class="program-table" aria-label="Program of talks">
     <div class="program-row">
-      <div class="slot">Talk 01</div>
+      <div class="detail">
+        <h3 class="talk-title">Stablecoins and Digital Assets Industry in Alberta</h3>
+        <p class="speaker">Brian Ford · VP &amp; Head, Business Solutions &amp; Digital Assets, ATB Financial</p>
+      </div>
+    </div>
+    <div class="program-row">
+      <div class="detail">
+        <h3 class="talk-title">Next-generation Banking with Canada's Regulated Stablecoin</h3>
+        <p class="speaker">Kevin Zhang · Co-Founder, Loon</p>
+      </div>
+    </div>
+    <div class="program-row">
+      <div class="detail">
+        <h3 class="talk-title">Introduction to Canadian Bitcoin Consortium and Blockchain Insurance</h3>
+        <p class="speaker">Koleya Karringten · Executive Director, Canadian Blockchain Consortium</p>
+      </div>
+    </div>
+    <div class="program-row">
       <div class="detail">
         <h3 class="talk-title">Keep Stablecoin Transactions Safe in Agentic Environments</h3>
         <p class="speaker">Youssef Harkati · Co-Founder &amp; CEO, BrightOnLABS</p>
