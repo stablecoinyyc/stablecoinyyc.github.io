@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://stablecoinyyc.github.io/sitemap.xml
