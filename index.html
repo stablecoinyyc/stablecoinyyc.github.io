@@ -79,11 +79,15 @@
   "performer": [
     {"@type": "Person", "name": "Brian Ford", "jobTitle": "VP & Head, Business Solutions & Digital Assets", "worksFor": {"@type": "Organization", "name": "ATB Financial"}},
     {"@type": "Person", "name": "Kevin Zhang", "jobTitle": "Co-Founder", "worksFor": {"@type": "Organization", "name": "Loon"}},
-    {"@type": "Person", "name": "Youssef Harkati", "jobTitle": "Co-Founder & CEO", "worksFor": {"@type": "Organization", "name": "BrightOnLABS"}},
+    {"@type": "Person", "name": "Youssef Harkati", "jobTitle": "Founder & CEO", "worksFor": {"@type": "Organization", "name": "BrightOnLABS"}},
     {"@type": "Person", "name": "Jade Alberts", "jobTitle": "Marketing Director", "worksFor": {"@type": "Organization", "name": "Blockchain Insurance Inc."}},
     {"@type": "Person", "name": "George Bordianu", "jobTitle": "Co-Founder & CEO", "worksFor": {"@type": "Organization", "name": "Balance"}},
     {"@type": "Person", "name": "Koleya Karringten", "jobTitle": "Executive Director", "worksFor": {"@type": "Organization", "name": "Canadian Blockchain Consortium"}},
-    {"@type": "Person", "name": "Julie Brunias", "jobTitle": "Cybersecurity Team Lead & AI Champion", "worksFor": {"@type": "Organization", "name": "Videotron"}}
+    {"@type": "Person", "name": "Julie Brunias", "jobTitle": "Cybersecurity Team Lead & AI Champion", "worksFor": {"@type": "Organization", "name": "Videotron"}},
+    {"@type": "Person", "name": "Felipe Priuli", "jobTitle": "CADD Program Director", "worksFor": {"@type": "Organization", "name": "Tetra Digital Group"}},
+    {"@type": "Person", "name": "Mohamed Zohiri", "jobTitle": "Legal Counsel", "worksFor": {"@type": "Organization", "name": "Alberta Securities Commission"}},
+    {"@type": "Person", "name": "Jiayu Zhou", "jobTitle": "Professor of AI", "worksFor": {"@type": "Organization", "name": "School of Information, University of Michigan"}},
+    {"@type": "Person", "name": "Marius Zoican", "jobTitle": "Associate Professor of Finance, Canada Research Chair in Financial Technology", "worksFor": {"@type": "Organization", "name": "Haskayne School of Business, University of Calgary"}}
   ]
 }
 </script>
@@ -323,9 +327,30 @@
   .program-head .lede { color: var(--ink); }
   .program-table { border-top: 1px solid rgba(14,15,17,.14); }
   .program-row {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 32px;
     padding: 32px 0;
     border-bottom: 1px solid rgba(14,15,17,.14);
   }
+  .program-row .time {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--mute);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+    padding-top: 8px;
+  }
+  .program-row.break { padding: 20px 0; }
+  .program-row.break .talk-title {
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--mute);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .program-row.break .time { padding-top: 2px; }
   .program-row .talk-title {
     margin: 0;
     font-family: "Inter", sans-serif;
@@ -505,6 +530,8 @@
     .spkr:last-child { border-bottom: 0; }
     .theme-row { grid-template-columns: 1fr; gap: 16px; }
     .program-head { grid-template-columns: 1fr; gap: 24px; margin-bottom: 40px; }
+    .program-row { grid-template-columns: 1fr; gap: 10px; }
+    .program-row .time { padding-top: 0; }
     .partner { grid-template-columns: 48px 1fr; gap: 16px; }
     .partner .status { grid-column: 2; justify-self: start; }
     .loc-grid { grid-template-columns: 1fr; gap: 32px; }
@@ -597,7 +624,7 @@
     <div class="speakers-head">
       <h2>Speakers.</h2>
       <p class="lede">
-        Practitioners working at the edge of stablecoins, payments, and agentic AI, in the room to co-design the program. More to be announced.
+        Practitioners working at the edge of stablecoins, payments, and agentic AI, in the room to co-design the program.
       </p>
     </div>
     <div class="speakers-grid">
@@ -618,9 +645,9 @@
       <article class="spkr">
         <div class="spkr-avatar"><img src="pics/youssef-harkati.jpg" alt="Youssef Harkati headshot" loading="lazy"></div>
         <h3>Youssef Harkati</h3>
-        <p class="role">Co-Founder &amp; CEO</p>
+        <p class="role">Founder &amp; CEO</p>
         <p class="org">BrightOnLABS</p>
-        <p class="bio">Youssef co-founded BrightOnLABS, building AI-driven SaaS for anomaly detection and cloud security. A DevSecOps and cybersecurity specialist, he holds a Master's in Cybersecurity Engineering with a focus on AI.</p>
+        <p class="bio">Youssef founded BrightOnLABS, building AI-driven SaaS for anomaly detection and cloud security. A DevSecOps and cybersecurity specialist, he holds a Master's in Cybersecurity Engineering with a focus on AI.</p>
       </article>
       <article class="spkr">
         <div class="spkr-avatar"><img src="pics/jade-alberts.png" alt="Jade Alberts headshot" loading="lazy"></div>
@@ -664,10 +691,19 @@
         <p class="org">Alberta Securities Commission</p>
         <p class="bio">Mohamed co-leads the ASC's work on fiat-backed stablecoins and is deeply involved in the CSA's efforts in this area, including the development and implementation of the Canadian regulatory framework for stablecoins. His work sits at the intersection of regulation, payments, digital assets, and financial market innovation. He is also active in the CSA's AI initiatives, including recent staff guidance, consultations, and broader policy on the use of AI in capital markets.</p>
       </article>
-      <article class="spkr placeholder">
-        <div class="spkr-avatar ghost">+</div>
-        <h3 class="ghost-h3">More to be announced</h3>
-        <p class="role">Programme being finalised</p>
+      <article class="spkr">
+        <div class="spkr-avatar"><img src="pics/jiayu-zhou.jpg" alt="Jiayu Zhou headshot" loading="lazy"></div>
+        <h3>Jiayu Zhou</h3>
+        <p class="role">Professor of AI</p>
+        <p class="org">School of Information, University of Michigan</p>
+        <p class="bio">Jiayu Zhou is a Professor of AI at the University of Michigan School of Information, researching machine learning and its applications, including large-scale optimization, federated learning, and AI for health.</p>
+      </article>
+      <article class="spkr">
+        <div class="spkr-avatar"><img src="pics/marius-zoican.jpg" alt="Marius Zoican headshot" loading="lazy"></div>
+        <h3>Marius Zoican</h3>
+        <p class="role">Associate Professor of Finance &middot; Canada Research Chair in Financial Technology</p>
+        <p class="org">Haskayne School of Business, University of Calgary</p>
+        <p class="bio">Marius Zoican is an Associate Professor of Finance and Canada Research Chair in Financial Technology at the Haskayne School of Business, University of Calgary, researching market microstructure, decentralized finance, and the economics of financial technology.</p>
       </article>
     </div>
   </div>
@@ -675,34 +711,125 @@
 
 <section class="band">
   <div class="program-head">
-    <h2>Program At A Glance.</h2>
+    <h2>Conference Program.</h2>
     <p class="lede">
-      A preview of the talks and panels planned for the day. The detailed program will be available closer to the event.
+      The full-day schedule for Tuesday, July 28, 2026 in the Indigo Room at the Alt Hotel, University District.
     </p>
   </div>
-  <div class="program-table" aria-label="Program of talks">
+  <div class="program-table" aria-label="Conference program schedule">
+    <div class="program-row break">
+      <div class="time">8:30 – 9:00</div>
+      <div class="detail">
+        <h3 class="talk-title">Registration and Coffee</h3>
+      </div>
+    </div>
     <div class="program-row">
+      <div class="time">9:00 – 9:10</div>
+      <div class="detail">
+        <h3 class="talk-title">Welcome and Opening Remarks</h3>
+        <p class="speaker">Anders Nygren and Henry Leung · Schulich School of Engineering, University of Calgary</p>
+      </div>
+    </div>
+    <div class="program-row">
+      <div class="time">9:10 – 9:30</div>
       <div class="detail">
         <h3 class="talk-title">Stablecoins and Digital Assets Industry in Alberta</h3>
         <p class="speaker">Brian Ford · VP &amp; Head, Business Solutions &amp; Digital Assets, ATB Financial</p>
       </div>
     </div>
     <div class="program-row">
+      <div class="time">9:30 – 9:50</div>
       <div class="detail">
         <h3 class="talk-title">Next-generation Banking with Canada's Regulated Stablecoin</h3>
         <p class="speaker">Kevin Zhang · Co-Founder, Loon</p>
       </div>
     </div>
     <div class="program-row">
+      <div class="time">9:50 – 10:10</div>
+      <div class="detail">
+        <h3 class="talk-title">CADD in Practice: Bringing Canada's Stablecoin to Market</h3>
+        <p class="speaker">Felipe Priuli · CADD Program Director, Tetra Digital Group</p>
+      </div>
+    </div>
+    <div class="program-row break">
+      <div class="time">10:10 – 10:40</div>
+      <div class="detail">
+        <h3 class="talk-title">Coffee Break</h3>
+      </div>
+    </div>
+    <div class="program-row">
+      <div class="time">10:40 – 11:00</div>
+      <div class="detail">
+        <h3 class="talk-title">Regulating Fiat-Backed Stablecoins: The Canadian Framework</h3>
+        <p class="speaker">Mohamed Zohiri, LL.B, LL.M · Legal Counsel, Alberta Securities Commission</p>
+      </div>
+    </div>
+    <div class="program-row">
+      <div class="time">11:00 – 11:20</div>
       <div class="detail">
         <h3 class="talk-title">Introduction to Canadian Bitcoin Consortium and Blockchain Insurance</h3>
         <p class="speaker">Koleya Karringten · Executive Director, Canadian Blockchain Consortium</p>
       </div>
     </div>
     <div class="program-row">
+      <div class="time">11:20 – 12:05</div>
       <div class="detail">
-        <h3 class="talk-title">Keep Stablecoin Transactions Safe in Agentic Environments</h3>
-        <p class="speaker">Youssef Harkati · Co-Founder &amp; CEO, BrightOnLABS</p>
+        <h3 class="talk-title">Panel: When Money Moves Itself. Trust, Risk, and Infrastructure for Stablecoins</h3>
+        <p class="speaker">Kevin Zhang, George Bordianu, Brian Ford, Koleya Karringten, Felipe Priuli, and Mohamed Zohiri · Moderated by Jade Alberts, Marketing Director, Blockchain Insurance Inc.</p>
+      </div>
+    </div>
+    <div class="program-row break">
+      <div class="time">12:05 – 13:30</div>
+      <div class="detail">
+        <h3 class="talk-title">Lunch and Networking</h3>
+      </div>
+    </div>
+    <div class="program-row">
+      <div class="time">13:30 – 14:10</div>
+      <div class="detail">
+        <h3 class="talk-title">AI Agents: It's All Fun and Games Until Money Moves</h3>
+        <p class="speaker">Youssef Harkati · Founder &amp; CEO, BrightOnLABS</p>
+      </div>
+    </div>
+    <div class="program-row">
+      <div class="time">14:10 – 14:30</div>
+      <div class="detail">
+        <h3 class="talk-title">Agentic Marketplace</h3>
+        <p class="speaker">Steve Drew · Schulich School of Engineering, University of Calgary</p>
+      </div>
+    </div>
+    <div class="program-row">
+      <div class="time">14:30 – 15:15</div>
+      <div class="detail">
+        <h3 class="talk-title">Panel: Working with AI Agents. Autonomy, Trust, and Security in Agentic Systems</h3>
+        <p class="speaker">Youssef Harkati, Marius Zoican, Jiayu Zhou, and Steve Drew · Moderated by Henry Leung</p>
+      </div>
+    </div>
+    <div class="program-row break">
+      <div class="time">15:15 – 15:45</div>
+      <div class="detail">
+        <h3 class="talk-title">Coffee Break</h3>
+      </div>
+    </div>
+    <div class="program-row">
+      <div class="time">15:45 – 16:05</div>
+      <div class="detail">
+        <h3 class="talk-title">Custody at Scale: Safeguarding Digital Assets in Canada</h3>
+        <p class="speaker">George Bordianu · Co-Founder &amp; CEO, Balance</p>
+      </div>
+    </div>
+    <div class="program-row">
+      <div class="time">16:05 – 16:25</div>
+      <div class="detail">
+        <h3 class="talk-title">Securing Generative and Agentic AI: Lessons from the Red Team</h3>
+        <p class="speaker">Julie Brunias · Cybersecurity Team Lead &amp; AI Champion, Videotron</p>
+      </div>
+    </div>
+    <div class="program-row">
+      <div class="time">16:25 – 16:30</div>
+      <div class="detail">
+        <h3 class="talk-title">Closing Remarks</h3>
+        <p class="speaker">Organizing Committee</p>
       </div>
     </div>
   </div>
