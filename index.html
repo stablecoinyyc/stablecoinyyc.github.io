@@ -119,6 +119,8 @@
     text-rendering: optimizeLegibility;
   }
   body { overflow-x: hidden; }
+  html { scroll-behavior: smooth; }
+  section[id] { scroll-margin-top: 105px; }
   a { color: inherit; text-decoration: none; }
   img { display: block; max-width: 100%; }
 
@@ -140,6 +142,16 @@
   .nav-inner .left  { display: flex; align-items: center; gap: 16px; font-size: 30px; font-weight: 700; letter-spacing: -0.02em; }
   .nav-inner .nav-logo { height: 72px; width: auto; display: block; }
   .nav-inner .mid   { font-weight: 700; letter-spacing: -0.005em; }
+  .nav-menu { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }
+  .nav-menu a {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 0;
+    border-bottom: 2px solid transparent;
+  }
+  .nav-menu a:hover { border-bottom-color: var(--red); }
   .nav-inner .right { text-align: right; color: var(--mute); }
 
   /* ─────────── hero, centered symmetric ─────────── */
@@ -363,6 +375,25 @@
   }
   .program-row .speaker { margin: 12px 0 0; font-size: 19px; line-height: 1.4; color: var(--mute); font-weight: 600; }
 
+  /* ─────────── PHOTOS (paper band) ─────────── */
+  .photos-head { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: end; margin-bottom: 64px; }
+  .photos-head .lede { color: var(--ink); }
+  .photos-grid { columns: 3; column-gap: 16px; }
+  .photos-grid a {
+    display: block;
+    margin: 0 0 16px;
+    overflow: hidden;
+    border: 2px solid var(--ink);
+    background: var(--ink);
+    break-inside: avoid;
+  }
+  .photos-grid img {
+    width: 100%;
+    height: auto;
+    transition: transform .2s ease;
+  }
+  .photos-grid a:hover img { transform: scale(1.03); }
+
   /* ─────────── WHY (paper band) ─────────── */
   .why-head { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: end; margin-bottom: 64px; }
   .why-head .lede { color: var(--ink); }
@@ -518,6 +549,7 @@
   /* ─────────── responsive ─────────── */
   @media (max-width: 1000px) {
     :root { --gutter: 28px; }
+    .nav-menu { display: none; }
     .brief-grid { grid-template-columns: 1fr; gap: 40px; }
     .speakers-head { grid-template-columns: 1fr; gap: 24px; margin-bottom: 40px; }
     .why-head { grid-template-columns: 1fr; gap: 24px; margin-bottom: 40px; }
@@ -525,6 +557,9 @@
     .sponsors-grid { grid-template-columns: 1fr; gap: 40px; padding: 40px 0; }
     .organizers-head { grid-template-columns: 1fr; gap: 24px; margin-bottom: 40px; }
     .organizers-grid { grid-template-columns: 1fr; gap: 40px; }
+    .photos-head { grid-template-columns: 1fr; gap: 24px; margin-bottom: 40px; }
+    .photos-grid { columns: 2; column-gap: 12px; }
+    .photos-grid a { margin-bottom: 12px; }
     .speakers-grid { grid-template-columns: 1fr; }
     .spkr { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.4); }
     .spkr:last-child { border-bottom: 0; }
@@ -547,6 +582,7 @@
     .nav-inner .left { font-size: 16px; }
     .nav-inner .nav-logo { height: 48px; }
     .hide-sm { display: none; }
+    .photos-grid { columns: 1; }
     .foot-meta { flex-direction: column; gap: 8px; align-items: flex-start; }
     .loc-info h3 { font-size: 26px; }
     .loc-map { height: 320px; }
@@ -593,7 +629,14 @@
     <div class="left">
       <img class="nav-logo" src="pics/ieee-smc-logo.webp" alt="IEEE Systems, Man, and Cybernetics Society logo">
     </div>
-    <div class="mid"></div>
+    <div class="mid nav-menu">
+      <a href="#speakers">Speakers</a>
+      <a href="#photos">Photos</a>
+      <a href="#program">Program</a>
+      <a href="#organizers">Organizers</a>
+      <a href="#sponsors">Sponsors</a>
+      <a href="#location">Location</a>
+    </div>
     <div class="right">
       <span class="hide-sm">July 28, 2026</span>
       <a class="nav-cta" href="https://www.eventbrite.com/e/training-talents-for-the-era-of-stablecoins-agentic-ai-tickets-1990352621269" target="_blank" rel="noopener">RSVP ↗</a>
@@ -619,7 +662,7 @@
   </a>
 </section>
 
-<section class="band color blue">
+<section class="band color blue" id="speakers">
   <div class="wrap">
     <div class="speakers-head">
       <h2>Speakers.</h2>
@@ -632,84 +675,128 @@
         <div class="spkr-avatar"><img src="pics/brian-ford.jpg" alt="Brian Ford headshot" loading="lazy"></div>
         <h3>Brian Ford</h3>
         <p class="role">VP &amp; Head, Business Solutions &amp; Digital Assets</p>
-        <p class="org">ATB Financial</p>
-        <p class="bio">Brian leads ATB Business Solutions, overseeing payments, liquidity, trade finance, cards, and cryptocurrency. He previously held senior cash-management and payments roles at HSBC across Canada and Korea.</p>
-      </article>
+        <p class="org">ATB Financial</p>      </article>
       <article class="spkr">
         <div class="spkr-avatar"><img src="pics/kevin-zhang.jpg" alt="Kevin Zhang headshot" loading="lazy"></div>
         <h3>Kevin Zhang</h3>
         <p class="role">Co-Founder</p>
-        <p class="org">Loon</p>
-        <p class="bio">Kevin is building Loon, a regulated Canadian-dollar stablecoin. Previously the technical architect behind Paytrie and a senior blockchain architect at ConsenSys, he holds a systems design engineering degree from the University of Waterloo.</p>
-      </article>
+        <p class="org">Loon</p>      </article>
       <article class="spkr">
         <div class="spkr-avatar"><img src="pics/youssef-harkati.jpg" alt="Youssef Harkati headshot" loading="lazy"></div>
         <h3>Youssef Harkati</h3>
         <p class="role">Founder &amp; CEO</p>
-        <p class="org">BrightOnLABS</p>
-        <p class="bio">Youssef founded BrightOnLABS, building AI-driven SaaS for anomaly detection and cloud security. A DevSecOps and cybersecurity specialist, he holds a Master's in Cybersecurity Engineering with a focus on AI.</p>
-      </article>
+        <p class="org">BrightOnLABS</p>      </article>
       <article class="spkr">
         <div class="spkr-avatar"><img src="pics/jade-alberts.png" alt="Jade Alberts headshot" loading="lazy"></div>
         <h3>Jade Alberts</h3>
         <p class="role">Marketing Director</p>
-        <p class="org">Blockchain Insurance Inc.</p>
-        <p class="bio">A Calgary entrepreneur with more than 25 years of experience and an active angel investor across 30+ startups, Jade advises founders through Innovate Calgary and hosts the weekly show "Telling It Like It Is."</p>
-      </article>
+        <p class="org">Blockchain Insurance Inc.</p>      </article>
       <article class="spkr">
         <div class="spkr-avatar"><img src="pics/koleya-karringten.jpg" alt="Koleya Karringten headshot" loading="lazy"></div>
         <h3>Koleya Karringten</h3>
         <p class="role">Executive Director</p>
-        <p class="org">Canadian Blockchain Consortium</p>
-        <p class="bio">Koleya leads the Canadian Blockchain Consortium, the country's largest blockchain ecosystem organization, uniting companies, corporate leaders, and government. A cleantech entrepreneur and CEO of Absolute Combustion, she co-founded the Canadian Blockchain Association for Women.</p>
-      </article>
+        <p class="org">Canadian Blockchain Consortium</p>      </article>
       <article class="spkr">
         <div class="spkr-avatar"><img src="pics/julie-brunias.webp" alt="Julie Brunias headshot" loading="lazy"></div>
         <h3>Julie Brunias</h3>
         <p class="role">Cybersecurity Team Lead &amp; AI Champion</p>
-        <p class="org">Videotron</p>
-        <p class="bio">Julie is a cybersecurity professional with 14 years defending critical infrastructure across energy, banking, telecom, and manufacturing, with expertise in red teaming, adversarial testing, and securing generative AI. She focuses on the intersection of AI security and governance, and speaks frequently at conferences including InCyber, GoSec, and HackMiami.</p>
-      </article>
+        <p class="org">Videotron</p>      </article>
       <article class="spkr">
         <div class="spkr-avatar"><img src="pics/felipe-priuli.png" alt="Felipe Priuli headshot" loading="lazy"></div>
         <h3>Felipe Priuli</h3>
         <p class="role">CADD Program Director</p>
-        <p class="org">Tetra Digital Group</p>
-        <p class="bio">Felipe leads the CADD program at Tetra Digital Group, which launched CADD, Canada's first Canadian-dollar-backed stablecoin issued by a financial institution and approved by Alberta Treasury Board and Finance. He has been the program's lead voice on driving stablecoin adoption through business-to-business payments.</p>
-      </article>
+        <p class="org">Tetra Digital Group</p>      </article>
       <article class="spkr">
         <div class="spkr-avatar"><img src="pics/mohamed-zohiri.webp" alt="Mohamed Zohiri headshot" loading="lazy"></div>
         <h3>Mohamed Zohiri, LL.B, LL.M</h3>
         <p class="role">Legal Counsel</p>
-        <p class="org">Alberta Securities Commission</p>
-        <p class="bio">Mohamed co-leads the ASC's work on fiat-backed stablecoins and is deeply involved in the CSA's efforts in this area, including the development and implementation of the Canadian regulatory framework for stablecoins. His work sits at the intersection of regulation, payments, digital assets, and financial market innovation. He is also active in the CSA's AI initiatives, including recent staff guidance, consultations, and broader policy on the use of AI in capital markets.</p>
-      </article>
+        <p class="org">Alberta Securities Commission</p>      </article>
       <article class="spkr">
         <div class="spkr-avatar"><img src="pics/jiayu-zhou.jpg" alt="Jiayu Zhou headshot" loading="lazy"></div>
         <h3>Jiayu Zhou</h3>
         <p class="role">Professor of AI</p>
-        <p class="org">School of Information, University of Michigan</p>
-        <p class="bio">Jiayu Zhou is a Professor of AI at the University of Michigan School of Information, researching machine learning and its applications, including large-scale optimization, federated learning, and AI for health.</p>
-      </article>
+        <p class="org">School of Information, University of Michigan</p>      </article>
       <article class="spkr">
         <div class="spkr-avatar"><img src="pics/steve-drew.jpeg" alt="Steve Drew headshot" loading="lazy"></div>
         <h3>Steve Drew, PhD, PEng</h3>
         <p class="role">Associate Professor, Schulich School of Engineering</p>
-        <p class="org">University of Calgary</p>
-        <p class="bio">Dr. Drew's research spans distributed systems, privacy-enhancing technologies (PETs), and blockchain. He was a final winner of the NSF/NIST Privacy-Enhancing Technologies Challenges. He received the Best Paper Award at the 2025 IEEE International Conference on Autonomous and Trusted Computing.</p>
-      </article>
+        <p class="org">University of Calgary</p>      </article>
       <article class="spkr">
         <div class="spkr-avatar"><img src="pics/marius-zoican.jpg" alt="Marius Zoican headshot" loading="lazy"></div>
         <h3>Marius Zoican</h3>
         <p class="role">Associate Professor of Finance &middot; Canada Research Chair in Financial Technology</p>
-        <p class="org">Haskayne School of Business, University of Calgary</p>
-        <p class="bio">Marius Zoican is an Associate Professor of Finance and Canada Research Chair in Financial Technology at the Haskayne School of Business, University of Calgary, researching market microstructure, decentralized finance, and the economics of financial technology.</p>
-      </article>
+        <p class="org">Haskayne School of Business, University of Calgary</p>      </article>
     </div>
   </div>
 </section>
 
-<section class="band">
+<section class="band" id="photos">
+  <div class="photos-head">
+    <h2>Photos.</h2>
+    <p class="lede">
+      Scenes from the forum on July 28, 2026. Click any photo to view it at full size.
+    </p>
+  </div>
+  <div class="photos-grid">
+    <a href="pics/event-photos/web/R52_1321.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/R52_1321.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 1" loading="lazy"></a>
+    <a href="pics/event-photos/web/R52_1335.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/R52_1335.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 2" loading="lazy"></a>
+    <a href="pics/event-photos/web/R52_1348.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/R52_1348.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 3" loading="lazy"></a>
+    <a href="pics/event-photos/web/R52_1370.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/R52_1370.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 4" loading="lazy"></a>
+    <a href="pics/event-photos/web/R52_1385.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/R52_1385.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 5" loading="lazy"></a>
+    <a href="pics/event-photos/web/R52_1386.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/R52_1386.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 6" loading="lazy"></a>
+    <a href="pics/event-photos/web/R52_1400.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/R52_1400.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 7" loading="lazy"></a>
+    <a href="pics/event-photos/web/R52_1405.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/R52_1405.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 8" loading="lazy"></a>
+    <a href="pics/event-photos/web/R52_1412.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/R52_1412.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 9" loading="lazy"></a>
+    <a href="pics/event-photos/web/R52_1421.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/R52_1421.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 10" loading="lazy"></a>
+    <a href="pics/event-photos/web/R52_1424.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/R52_1424.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 11" loading="lazy"></a>
+    <a href="pics/event-photos/web/R52_1428.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/R52_1428.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 12" loading="lazy"></a>
+    <a href="pics/event-photos/web/R52_1432.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/R52_1432.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 13" loading="lazy"></a>
+    <a href="pics/event-photos/web/R52_1434.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/R52_1434.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 14" loading="lazy"></a>
+    <a href="pics/event-photos/web/R52_1442.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/R52_1442.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 15" loading="lazy"></a>
+    <a href="pics/event-photos/web/R52_1447.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/R52_1447.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 16" loading="lazy"></a>
+    <a href="pics/event-photos/web/R52_1453.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/R52_1453.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 17" loading="lazy"></a>
+    <a href="pics/event-photos/web/R52_1464.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/R52_1464.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 18" loading="lazy"></a>
+    <a href="pics/event-photos/web/R52_1471.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/R52_1471.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 19" loading="lazy"></a>
+    <a href="pics/event-photos/web/R52_1472.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/R52_1472.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 20" loading="lazy"></a>
+    <a href="pics/event-photos/web/R52_1484.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/R52_1484.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 21" loading="lazy"></a>
+    <a href="pics/event-photos/web/R52_1487.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/R52_1487.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 22" loading="lazy"></a>
+    <a href="pics/event-photos/web/R52_1497.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/R52_1497.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 23" loading="lazy"></a>
+    <a href="pics/event-photos/web/R52_1520.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/R52_1520.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 24" loading="lazy"></a>
+    <a href="pics/event-photos/web/R52_1527.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/R52_1527.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 25" loading="lazy"></a>
+    <a href="pics/event-photos/web/R52_1531.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/R52_1531.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 26" loading="lazy"></a>
+    <a href="pics/event-photos/web/R52_1547.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/R52_1547.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 27" loading="lazy"></a>
+    <a href="pics/event-photos/web/R52_1575.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/R52_1575.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 28" loading="lazy"></a>
+    <a href="pics/event-photos/web/R52_1579.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/R52_1579.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 29" loading="lazy"></a>
+    <a href="pics/event-photos/web/R52_1581.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/R52_1581.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 30" loading="lazy"></a>
+    <a href="pics/event-photos/web/R52_1596.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/R52_1596.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 31" loading="lazy"></a>
+    <a href="pics/event-photos/web/R52_1605.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/R52_1605.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 32" loading="lazy"></a>
+    <a href="pics/event-photos/web/R52_1610.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/R52_1610.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 33" loading="lazy"></a>
+    <a href="pics/event-photos/web/R52_1630.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/R52_1630.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 34" loading="lazy"></a>
+    <a href="pics/event-photos/web/R52_1652.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/R52_1652.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 35" loading="lazy"></a>
+    <a href="pics/event-photos/web/R52_1661.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/R52_1661.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 36" loading="lazy"></a>
+    <a href="pics/event-photos/web/R52_1667.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/R52_1667.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 37" loading="lazy"></a>
+    <a href="pics/event-photos/web/R52_1676.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/R52_1676.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 38" loading="lazy"></a>
+    <a href="pics/event-photos/web/R52_1682.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/R52_1682.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 39" loading="lazy"></a>
+    <a href="pics/event-photos/web/R52_1686.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/R52_1686.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 40" loading="lazy"></a>
+    <a href="pics/event-photos/web/R52_1694.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/R52_1694.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 41" loading="lazy"></a>
+    <a href="pics/event-photos/web/R52_1701.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/R52_1701.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 42" loading="lazy"></a>
+    <a href="pics/event-photos/web/R52_1710.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/R52_1710.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 43" loading="lazy"></a>
+    <a href="pics/event-photos/web/R52_1712.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/R52_1712.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 44" loading="lazy"></a>
+    <a href="pics/event-photos/web/R52_1719.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/R52_1719.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 45" loading="lazy"></a>
+    <a href="pics/event-photos/web/IMG_1798.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/IMG_1798.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 46" loading="lazy"></a>
+    <a href="pics/event-photos/web/IMG_1800.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/IMG_1800.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 47" loading="lazy"></a>
+    <a href="pics/event-photos/web/IMG_1802.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/IMG_1802.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 48" loading="lazy"></a>
+    <a href="pics/event-photos/web/IMG_1803.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/IMG_1803.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 49" loading="lazy"></a>
+    <a href="pics/event-photos/web/IMG_1805.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/IMG_1805.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 50" loading="lazy"></a>
+    <a href="pics/event-photos/web/IMG_1806.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/IMG_1806.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 51" loading="lazy"></a>
+    <a href="pics/event-photos/web/IMG_1808.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/IMG_1808.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 52" loading="lazy"></a>
+    <a href="pics/event-photos/web/IMG_1810.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/IMG_1810.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 53" loading="lazy"></a>
+    <a href="pics/event-photos/web/IMG_1811.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/IMG_1811.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 54" loading="lazy"></a>
+    <a href="pics/event-photos/web/IMG_1814.jpg" target="_blank" rel="noopener"><img src="pics/event-photos/web/IMG_1814.jpg" alt="IEEE Stablecoin and Agentic AI Forum photo 55" loading="lazy"></a>
+  </div>
+</section>
+
+<section class="band" id="program">
   <div class="program-head">
     <h2>Program.</h2>
     <p class="lede">
@@ -842,7 +929,7 @@
   </div>
 </section>
 
-<section class="band">
+<section class="band" id="organizers">
   <div class="organizers-head">
     <h2>Organizers.</h2>
   </div>
@@ -864,7 +951,7 @@
   </div>
 </section>
 
-<section class="band">
+<section class="band" id="sponsors">
   <div class="sponsors-head">
     <h2>Sponsors.</h2>
     <p class="lede">
@@ -917,7 +1004,7 @@
   </div>
 </section>
 
-<section class="band color yel">
+<section class="band color yel" id="location">
   <div class="wrap">
     <div class="loc-grid">
       <div class="loc-info">
