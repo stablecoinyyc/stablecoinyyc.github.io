@@ -422,6 +422,27 @@
   .organizer-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .organizer .bio { margin: 16px 0 0; font-size: 19px; line-height: 1.6; color: var(--ink); }
 
+  /* ─────────── VOLUNTEERS (paper band) ─────────── */
+  .volunteers-head { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: end; margin-bottom: 64px; }
+  .volunteers-head .lede { color: var(--ink); }
+  .volunteers-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 40px;
+  }
+  .volunteer h3 {
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 900;
+    font-size: clamp(18px, 1.7vw, 24px);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    margin: 0 0 10px;
+    color: var(--ink);
+  }
+  .volunteer .role { margin: 0; font-size: 17px; line-height: 1.4; color: var(--ink); font-weight: 500; }
+  .volunteer .org { margin: 10px 0 0; font-size: 13px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mute); }
+
   /* ─────────── SPONSORS (paper band) ─────────── */
   .sponsors-head { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: end; margin-bottom: 64px; }
   .sponsors-head .lede { color: var(--ink); }
@@ -557,6 +578,8 @@
     .sponsors-grid { grid-template-columns: 1fr; gap: 40px; padding: 40px 0; }
     .organizers-head { grid-template-columns: 1fr; gap: 24px; margin-bottom: 40px; }
     .organizers-grid { grid-template-columns: 1fr; gap: 40px; }
+    .volunteers-head { grid-template-columns: 1fr; gap: 24px; margin-bottom: 40px; }
+    .volunteers-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
     .photos-head { grid-template-columns: 1fr; gap: 24px; margin-bottom: 40px; }
     .photos-grid { columns: 2; column-gap: 12px; }
     .photos-grid a { margin-bottom: 12px; }
@@ -635,6 +658,7 @@
       <a href="#program">Program</a>
       <a href="#organizers">Organizers</a>
       <a href="#sponsors">Sponsors</a>
+      <a href="#volunteers">Volunteers</a>
       <a href="#location">Location</a>
     </div>
     <div class="right">
@@ -1001,6 +1025,39 @@
       <div class="t">A pipeline into industry roles</div>
       <div class="p">The room includes banks, payment processors, AI labs, and infrastructure firms hiring at the stablecoin and agentic AI intersection, so students and early-career engineers connect directly with internship and employment opportunities.</div>
     </div>
+  </div>
+</section>
+
+<section class="band" id="volunteers">
+  <div class="volunteers-head">
+    <h2>Volunteers.</h2>
+  </div>
+  <div class="volunteers-grid">
+    <article class="volunteer">
+      <h3>Guojun Tang</h3>
+      <p class="role">PhD Candidate</p>
+      <p class="org">University of Calgary</p>
+    </article>
+    <article class="volunteer">
+      <h3>Yunkai Bao</h3>
+      <p class="role">PhD Candidate</p>
+      <p class="org">University of Calgary</p>
+    </article>
+    <article class="volunteer">
+      <h3>Jiajun Wu</h3>
+      <p class="role">PhD Candidate</p>
+      <p class="org">University of Calgary</p>
+    </article>
+    <article class="volunteer">
+      <h3>Yingxuan Cao</h3>
+      <p class="role">PhD Candidate</p>
+      <p class="org">University of Calgary</p>
+    </article>
+    <article class="volunteer">
+      <h3>Jialin Yang</h3>
+      <p class="role">PhD Candidate</p>
+      <p class="org">University of Calgary</p>
+    </article>
   </div>
 </section>
 
